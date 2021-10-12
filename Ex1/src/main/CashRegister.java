@@ -21,6 +21,8 @@ public class CashRegister {
         // Sets the UPC code for the current scanned product.  
         this.product = productDB.getProductInfo(UPCCode);
         display.displayText(getCurrentProductInfo().name + " $" + getCurrentProductInfo().price);
+        this.scannedProducts.add(this.product);
+        
     }
 
     public Product getCurrentProductInfo() {

@@ -102,10 +102,14 @@ public class GUI implements ActionListener {
             this.scanner.scannedUPCCode("6");
         }
         // MANUAL INPUT BUTTON
-        if (event.getSource() == enter_button) {
-            String input = keyboard_Input.getText();
-            this.keyboard.setUPCCode(input);
+        else if (event.getSource() == enter_button) {
+            System.out.println("TEST");
+            // System.out.println(keyboard_Input.getText());
+            // String input = keyboard_Input.getText();
+            // show_Display.setText(input);
+            // this.keyboard.setUPCCode(input);
         }
+        
     }
 
     public static void setDisplay(String text) {
