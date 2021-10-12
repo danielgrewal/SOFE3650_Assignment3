@@ -40,9 +40,7 @@ public class GUI implements ActionListener {
         button6 = new JButton("Add Grapes (6)");
         button6.addActionListener(this);
 
-        // border params: top bottom left right (padding around p)
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        // grid layout params: row col, x,y padding
         panel.setLayout(new GridLayout(20,2));
 
         panel.add(button1);
@@ -63,14 +61,19 @@ public class GUI implements ActionListener {
     }
     public static void main(String[] args) {
         new GUI();
+        //Product test = ProductDB.getProductInfo("1");
+        //System.out.println(test.name);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
-        // use values in ProductDB hashmap instead of hard coding
+        // use values in ProductMap instead of hard coding
         if (event.getSource() == button1) {
-            show_Display.setText("MILK");
-            // show_Display.setText(ProductDB.getProductInfo("1"));
+            //Product test = ProductDB.getProductInfo("1");
+            //System.out.println(test.name);
+            //show_Display.setText(ProductDB.getProductInfo("1"));
+            show_Display.setText("MILK");   
         }
         else if (event.getSource() == button2) {
             show_Display.setText("EGGS");
