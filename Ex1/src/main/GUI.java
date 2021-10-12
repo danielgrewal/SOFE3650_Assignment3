@@ -63,7 +63,7 @@ public class GUI implements ActionListener {
         print_Ticket.addActionListener(this);
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        panel.setLayout(new GridLayout(40,2));
+        panel.setLayout(new GridLayout(20,2));
 
         panel.add(label_buttons);
         panel.add(button1);

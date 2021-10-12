@@ -12,6 +12,7 @@ public class CashRegister {
     private TicketPrinter ticketPrinter;
 
     public CashRegister() {
+        this.scannedProducts = new ArrayList<>();
         this.productDB = new ProductDB();
         this.display = new Display();
         this.ticketPrinter = new TicketPrinter();
