@@ -6,15 +6,14 @@ import java.awt.*;
 
 public class GUI implements ActionListener {
 
+    private CashRegister cashRegister;
+
     JLabel label_Display;
     JLabel show_Display;
-
     JLabel label_Input;
     JTextField keyboard_Input;
-
     JFrame frame;
     JPanel panel;
-
     JButton button1;
     JButton button2;
     JButton button3;
@@ -25,6 +24,8 @@ public class GUI implements ActionListener {
     // Product test;
 
     public GUI() {
+
+        this.cashRegister = new CashRegister();
 
         frame = new JFrame();
         panel = new JPanel();
@@ -75,35 +76,28 @@ public class GUI implements ActionListener {
         new GUI();
         //Product test = ProductDB.getProductInfo("1");
         //System.out.println(test.name);
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        // use values in ProductMap instead of hard coding
-        if (event.getSource() == button1) {
-            //Product test = ProductDB.getProductInfo("1");
-            //System.out.println(test.name);
-            //show_Display.setText(ProductDB.getProductInfo("1"));
-            show_Display.setText("MILK");
-               
-        }
-        else if (event.getSource() == button2) {
-            show_Display.setText("EGGS");
-        }
-        else if (event.getSource() == button3) {
-            show_Display.setText("WHITE BREAD");
-        }
-        else if (event.getSource() == button4) {
-            show_Display.setText("RICE");
-        }
-        else if (event.getSource() == button5) {
-            show_Display.setText("STRAWBERRIES");
-        }
-        else if (event.getSource() == button6) {
-            show_Display.setText("GRAPES");
-        }
-        
     }
     
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        if (event.getSource() == button1) {
+            this.cashRegister.setCurrentProductUPC("1");
+        }
+        else if (event.getSource() == button2) {
+            this.cashRegister.setCurrentProductUPC("2");
+        }
+        else if (event.getSource() == button3) {
+            this.cashRegister.setCurrentProductUPC("3");
+        }
+        else if (event.getSource() == button4) {
+            this.cashRegister.setCurrentProductUPC("4");
+        }
+        else if (event.getSource() == button5) {
+            this.cashRegister.setCurrentProductUPC("5");
+        }
+        else if (event.getSource() == button6) {
+            this.cashRegister.setCurrentProductUPC("6");
+        }
+        show_Display.setText(this.cashRegister.getCurrentProductInfo().name);
+    }
 }
