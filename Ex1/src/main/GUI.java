@@ -24,6 +24,8 @@ public class GUI implements ActionListener {
     JButton button4;
     JButton button5;
     JButton button6;
+    static JLabel show_Ticket;
+    JButton print_Ticket;
 
     public GUI() {
 
@@ -56,8 +58,12 @@ public class GUI implements ActionListener {
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
 
+        show_Ticket = new JLabel("TICKET/RECEIPT:");
+        print_Ticket = new JButton("PRINT TICKET");
+        print_Ticket.addActionListener(this);
+
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        panel.setLayout(new GridLayout(20,2));
+        panel.setLayout(new GridLayout(40,2));
 
         panel.add(label_buttons);
         panel.add(button1);
@@ -73,6 +79,9 @@ public class GUI implements ActionListener {
         panel.add(label_Input);
         panel.add(keyboard_Input);
         panel.add(enter_button);
+
+        panel.add(show_Ticket);
+        panel.add(print_Ticket);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,7 +114,6 @@ public class GUI implements ActionListener {
         // MANUAL INPUT BUTTON
         else if (event.getSource() == enter_button) {
             String input = keyboard_Input.getText();
-            show_Display.setText(input);
             this.keyboard.setUPCCode(input);
         }
         
@@ -113,6 +121,10 @@ public class GUI implements ActionListener {
 
     public static void setDisplay(String text) {
         show_Display.setText(text);
+    }
+
+    public static void setTicket(String text) {
+        show_Ticket.setText(text);
     }
     
     public static void main(String[] args) {
