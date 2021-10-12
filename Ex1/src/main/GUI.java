@@ -7,6 +7,7 @@ import java.awt.*;
 public class GUI implements ActionListener {
 
     private CashRegister cashRegister;
+    private Scanner scanner;
 
     JLabel label_Display;
     static JLabel show_Display;
@@ -24,6 +25,7 @@ public class GUI implements ActionListener {
     public GUI() {
 
         this.cashRegister = new CashRegister();
+        this.scanner = new Scanner(this.cashRegister);
 
         frame = new JFrame();
         panel = new JPanel();
@@ -74,22 +76,22 @@ public class GUI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == button1) {
-            this.cashRegister.setCurrentProductUPC("1");
+            this.scanner.scannedUPCCode("1");
         }
         else if (event.getSource() == button2) {
-            this.cashRegister.setCurrentProductUPC("2");
+            this.scanner.scannedUPCCode("2");
         }
         else if (event.getSource() == button3) {
-            this.cashRegister.setCurrentProductUPC("3");
+            this.scanner.scannedUPCCode("3");
         }
         else if (event.getSource() == button4) {
-            this.cashRegister.setCurrentProductUPC("4");
+            this.scanner.scannedUPCCode("4");
         }
         else if (event.getSource() == button5) {
-            this.cashRegister.setCurrentProductUPC("5");
+            this.scanner.scannedUPCCode("5");
         }
         else if (event.getSource() == button6) {
-            this.cashRegister.setCurrentProductUPC("6");
+            this.scanner.scannedUPCCode("6");
         }
     }
 
