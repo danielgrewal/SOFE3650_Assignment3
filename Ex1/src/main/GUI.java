@@ -9,7 +9,7 @@ public class GUI implements ActionListener {
     private CashRegister cashRegister;
 
     JLabel label_Display;
-    JLabel show_Display;
+    static JLabel show_Display;
     JLabel label_Input;
     JTextField keyboard_Input;
     JFrame frame;
@@ -20,8 +20,6 @@ public class GUI implements ActionListener {
     JButton button4;
     JButton button5;
     JButton button6;
-
-    // Product test;
 
     public GUI() {
 
@@ -72,11 +70,6 @@ public class GUI implements ActionListener {
         frame.pack();
         frame.setVisible(true);
     }
-    public static void main(String[] args) {
-        new GUI();
-        //Product test = ProductDB.getProductInfo("1");
-        //System.out.println(test.name);
-    }
 
     @Override
     public void actionPerformed(ActionEvent event) {
@@ -98,8 +91,13 @@ public class GUI implements ActionListener {
         else if (event.getSource() == button6) {
             this.cashRegister.setCurrentProductUPC("6");
         }
-        String name = this.cashRegister.getCurrentProductInfo().name;
-        float price = this.cashRegister.getCurrentProductInfo().price;
-        show_Display.setText(name + " $" + price);
+    }
+
+    public static void setDisplay(String text) {
+        show_Display.setText(text);
+    }
+    
+    public static void main(String[] args) {
+        new GUI();
     }
 }

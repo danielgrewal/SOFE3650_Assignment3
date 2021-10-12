@@ -3,7 +3,7 @@ package main;
 // Model
 public class CashRegister {
 
-    private String UPCCode;
+    private Product product;
     private ProductDB productDB;
     private Display display;
     private TicketPrinter ticketPrinter;
@@ -16,12 +16,13 @@ public class CashRegister {
 
     public void setCurrentProductUPC(String UPCCode) {
         // Sets the UPC code for the current scanned product.  
-        this.UPCCode = UPCCode;
+        this.product = productDB.getProductInfo(UPCCode);
+        display.displayText(getCurrentProductInfo().name + " $" + getCurrentProductInfo().price);
     }
 
     public Product getCurrentProductInfo() {
         // Gets the product information for the latest scanned product.
-        return productDB.getProductInfo(this.UPCCode);
+        return this.product;
     }
     
 }
