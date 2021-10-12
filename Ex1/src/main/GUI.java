@@ -13,6 +13,11 @@ public class GUI implements ActionListener {
     JPanel panel;
 
     JButton button1;
+    JButton button2;
+    JButton button3;
+    JButton button4;
+    JButton button5;
+    JButton button6;
 
     public GUI() {
 
@@ -24,15 +29,15 @@ public class GUI implements ActionListener {
 
         button1 = new JButton("Add Milk (1)");
         button1.addActionListener(this);
-        JButton button2 = new JButton("Add Eggs (2)");
+        button2 = new JButton("Add Eggs (2)");
         button2.addActionListener(this);
-        JButton button3 = new JButton("Add White Bread (3)");
+        button3 = new JButton("Add White Bread (3)");
         button3.addActionListener(this);
-        JButton button4 = new JButton("Add Rice (4)");
+        button4 = new JButton("Add Rice (4)");
         button4.addActionListener(this);
-        JButton button5 = new JButton("Add Strawberries (5)");
+        button5 = new JButton("Add Strawberries (5)");
         button5.addActionListener(this);
-        JButton button6 = new JButton("Add Grapes (6)");
+        button6 = new JButton("Add Grapes (6)");
         button6.addActionListener(this);
 
         // border params: top bottom left right (padding around p)
@@ -61,8 +66,28 @@ public class GUI implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        show_Display.setText("BUTTON WAS PUSHED");
+    public void actionPerformed(ActionEvent event) {
+        // use values in ProductDB hashmap instead of hard coding
+        if (event.getSource() == button1) {
+            show_Display.setText("MILK");
+            // show_Display.setText(ProductDB.getProductInfo("1"));
+        }
+        else if (event.getSource() == button2) {
+            show_Display.setText("EGGS");
+        }
+        else if (event.getSource() == button3) {
+            show_Display.setText("WHITE BREAD");
+        }
+        else if (event.getSource() == button4) {
+            show_Display.setText("RICE");
+        }
+        else if (event.getSource() == button5) {
+            show_Display.setText("STRAWBERRIES");
+        }
+        else if (event.getSource() == button6) {
+            show_Display.setText("GRAPES");
+        }
+        
     }
     
 }
