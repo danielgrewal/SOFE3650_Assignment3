@@ -9,6 +9,9 @@ public class GUI implements ActionListener {
     JLabel label_Display;
     JLabel show_Display;
 
+    JLabel label_Input;
+    JTextField keyboard_Input;
+
     JFrame frame;
     JPanel panel;
 
@@ -19,6 +22,8 @@ public class GUI implements ActionListener {
     JButton button5;
     JButton button6;
 
+    // Product test;
+
     public GUI() {
 
         frame = new JFrame();
@@ -26,6 +31,9 @@ public class GUI implements ActionListener {
 
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
+
+        label_Input = new JLabel("KEYBOARD INPUT:"); 
+        keyboard_Input = new JTextField();
 
         button1 = new JButton("Add Milk (1)");
         button1.addActionListener(this);
@@ -52,6 +60,10 @@ public class GUI implements ActionListener {
 
         panel.add(label_Display);
         panel.add(show_Display);
+
+        panel.add(label_Input);
+        panel.add(keyboard_Input);
+
         
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,7 +85,8 @@ public class GUI implements ActionListener {
             //Product test = ProductDB.getProductInfo("1");
             //System.out.println(test.name);
             //show_Display.setText(ProductDB.getProductInfo("1"));
-            show_Display.setText("MILK");   
+            show_Display.setText("MILK");
+               
         }
         else if (event.getSource() == button2) {
             show_Display.setText("EGGS");
