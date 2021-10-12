@@ -1,9 +1,12 @@
 package main;
 
+import java.util.ArrayList;
+
 // Model
 public class CashRegister {
 
     private Product product;
+    private ArrayList<Product> scannedProducts;
     private ProductDB productDB;
     private Display display;
     private TicketPrinter ticketPrinter;

@@ -8,6 +8,7 @@ public class GUI implements ActionListener {
 
     private CashRegister cashRegister;
     private Scanner scanner;
+    private Keyboard keyboard;
 
     JLabel label_Display;
     static JLabel show_Display;
@@ -28,6 +29,7 @@ public class GUI implements ActionListener {
 
         this.cashRegister = new CashRegister();
         this.scanner = new Scanner(this.cashRegister);
+        this.keyboard = new Keyboard(this.cashRegister);
 
         frame = new JFrame();
         panel = new JPanel();
@@ -80,6 +82,7 @@ public class GUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {
+        // SCANNER BUTTONS
         if (event.getSource() == button1) {
             this.scanner.scannedUPCCode("1");
         }
@@ -97,6 +100,11 @@ public class GUI implements ActionListener {
         }
         else if (event.getSource() == button6) {
             this.scanner.scannedUPCCode("6");
+        }
+        // MANUAL INPUT BUTTON
+        if (event.getSource() == enter_button) {
+            String input = keyboard_Input.getText();
+            this.keyboard.setUPCCode(input);
         }
     }
 
