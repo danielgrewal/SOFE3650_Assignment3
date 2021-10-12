@@ -69,6 +69,7 @@ public class GUI implements ActionListener {
 
         panel.add(label_Input);
         panel.add(keyboard_Input);
+        panel.add(enter_button);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
