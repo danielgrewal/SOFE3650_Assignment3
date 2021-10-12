@@ -13,8 +13,10 @@ public class GUI implements ActionListener {
     static JLabel show_Display;
     JLabel label_Input;
     JTextField keyboard_Input;
+    JButton enter_button;
     JFrame frame;
     JPanel panel;
+    JLabel label_buttons;
     JButton button1;
     JButton button2;
     JButton button3;
@@ -30,28 +32,31 @@ public class GUI implements ActionListener {
         frame = new JFrame();
         panel = new JPanel();
 
+        label_buttons = new JLabel("SCAN PRODUCTS:");
+        button1 = new JButton("Milk");
+        button1.addActionListener(this);
+        button2 = new JButton("Eggs");
+        button2.addActionListener(this);
+        button3 = new JButton("White Bread");
+        button3.addActionListener(this);
+        button4 = new JButton("Rice");
+        button4.addActionListener(this);
+        button5 = new JButton("Strawberries");
+        button5.addActionListener(this);
+        button6 = new JButton("Grapes");
+        button6.addActionListener(this);
+
+        label_Input = new JLabel("ENTER UPC CODE MANUALLY:"); 
+        keyboard_Input = new JTextField();
+        enter_button = new JButton("ENTER");
+
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
-
-        label_Input = new JLabel("KEYBOARD INPUT:"); 
-        keyboard_Input = new JTextField();
-
-        button1 = new JButton("Add Milk (1)");
-        button1.addActionListener(this);
-        button2 = new JButton("Add Eggs (2)");
-        button2.addActionListener(this);
-        button3 = new JButton("Add White Bread (3)");
-        button3.addActionListener(this);
-        button4 = new JButton("Add Rice (4)");
-        button4.addActionListener(this);
-        button5 = new JButton("Add Strawberries (5)");
-        button5.addActionListener(this);
-        button6 = new JButton("Add Grapes (6)");
-        button6.addActionListener(this);
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(20,2));
 
+        panel.add(label_buttons);
         panel.add(button1);
         panel.add(button2);
         panel.add(button3);
@@ -65,7 +70,6 @@ public class GUI implements ActionListener {
         panel.add(label_Input);
         panel.add(keyboard_Input);
 
-        
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Cash Register");
