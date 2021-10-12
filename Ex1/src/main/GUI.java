@@ -51,6 +51,7 @@ public class GUI implements ActionListener {
         label_Input = new JLabel("ENTER UPC CODE MANUALLY:"); 
         keyboard_Input = new JTextField();
         enter_button = new JButton("ENTER");
+        enter_button.addActionListener(this);
 
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
@@ -103,11 +104,9 @@ public class GUI implements ActionListener {
         }
         // MANUAL INPUT BUTTON
         else if (event.getSource() == enter_button) {
-            System.out.println("TEST");
-            // System.out.println(keyboard_Input.getText());
-            // String input = keyboard_Input.getText();
-            // show_Display.setText(input);
-            // this.keyboard.setUPCCode(input);
+            String input = keyboard_Input.getText();
+            show_Display.setText(input);
+            this.keyboard.setUPCCode(input);
         }
         
     }
