@@ -77,7 +77,7 @@ public class GUI implements ActionListener {
         //Product test = ProductDB.getProductInfo("1");
         //System.out.println(test.name);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == button1) {
@@ -98,6 +98,8 @@ public class GUI implements ActionListener {
         else if (event.getSource() == button6) {
             this.cashRegister.setCurrentProductUPC("6");
         }
-        show_Display.setText(this.cashRegister.getCurrentProductInfo().name);
+        String name = this.cashRegister.getCurrentProductInfo().name;
+        float price = this.cashRegister.getCurrentProductInfo().price;
+        show_Display.setText(name + " $" + price);
     }
 }
