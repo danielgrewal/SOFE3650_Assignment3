@@ -60,14 +60,14 @@ public class GUI implements ActionListener {
         show_Display = new JLabel("No Product Selected");
 
         label_PrintTicket = new JLabel("TICKET/RECEIPT:");
-        show_Ticket = new JTextArea(10,1);
+        show_Ticket = new JTextArea(5,1);
         JScrollPane scrollPane = new JScrollPane(show_Ticket);
 
         print_Ticket = new JButton("PRINT TICKET");
         print_Ticket.addActionListener(this);
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        panel.setLayout(new GridLayout(20, 1));
+        panel.setLayout(new GridLayout(16, 1));
 
         panel.add(label_buttons);
         panel.add(button1);
@@ -91,8 +91,8 @@ public class GUI implements ActionListener {
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Cash Register");
-        //frame.pack();
-        frame.setSize(400,800);
+        frame.pack();
+        frame.setSize(300,800);
         //frame.setBounds(10,10,10,10);
         frame.setVisible(true);
     }
