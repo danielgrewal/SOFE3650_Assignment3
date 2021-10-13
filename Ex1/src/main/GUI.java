@@ -24,7 +24,7 @@ public class GUI implements ActionListener {
     JButton button4;
     JButton button5;
     JButton button6;
-    static JLabel show_Ticket;
+    static JTextArea show_Ticket;
     JButton print_Ticket;
 
     public GUI() {
@@ -58,8 +58,11 @@ public class GUI implements ActionListener {
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
 
-        show_Ticket = new JLabel("TICKET/RECEIPT:");
-        show_Ticket.setBounds(100, 100, 100, 30);
+        show_Ticket = new JTextArea("TICKET/RECEIPT:");
+        //show_Ticket.setBounds(100, 100, 100, 30);
+
+        //show_Ticket.setPreferredSize(new Dimension(250, 100));
+
         print_Ticket = new JButton("PRINT TICKET");
         print_Ticket.addActionListener(this);
 
