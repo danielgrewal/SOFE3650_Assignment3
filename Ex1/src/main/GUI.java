@@ -60,7 +60,7 @@ public class GUI implements ActionListener {
         show_Display = new JLabel("No Product Selected");
 
         label_PrintTicket = new JLabel("TICKET/RECEIPT:");
-        show_Ticket = new JTextArea("",100,0);
+        show_Ticket = new JTextArea("",50,2);
         //show_Ticket.setBounds(100, 100, 100, 30);
 
         //show_Ticket.setPreferredSize(new Dimension(250, 100));
@@ -69,7 +69,7 @@ public class GUI implements ActionListener {
         print_Ticket.addActionListener(this);
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        panel.setLayout(new GridLayout(50, 2));
+        panel.setLayout(new GridLayout(20, 2));
 
         panel.add(label_buttons);
         panel.add(button1);
