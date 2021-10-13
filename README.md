@@ -8,7 +8,7 @@ Mohammed Adnan Hashmi 100753115<br/>
 
 # Ex. 4: Comment on the advantages and disadvantages of the 3 approaches.
 
-Ex. 1 Approach:
+<strong>Ex. 1 Approach:</strong>
 
 Advantage:
 Easiest to implement the View components (Display, TicketPrinter) without any regard for layering.
