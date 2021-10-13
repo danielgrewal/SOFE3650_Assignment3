@@ -11,6 +11,7 @@ public class GUI implements ActionListener {
     private Keyboard keyboard;
 
     JLabel label_Display;
+    JLabel label_PrintTicket;
     static JLabel show_Display;
     JLabel label_Input;
     JTextField keyboard_Input;
@@ -58,7 +59,8 @@ public class GUI implements ActionListener {
         label_Display = new JLabel("DISPLAY:");
         show_Display = new JLabel("No Product Selected");
 
-        show_Ticket = new JTextArea("TICKET/RECEIPT:");
+        label_PrintTicket = new JLabel("TICKET/RECEIPT:");
+        show_Ticket = new JTextArea("",100,0);
         //show_Ticket.setBounds(100, 100, 100, 30);
 
         //show_Ticket.setPreferredSize(new Dimension(250, 100));
@@ -67,7 +69,7 @@ public class GUI implements ActionListener {
         print_Ticket.addActionListener(this);
 
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-        panel.setLayout(new GridLayout(25, 2));
+        panel.setLayout(new GridLayout(50, 2));
 
         panel.add(label_buttons);
         panel.add(button1);
@@ -84,6 +86,7 @@ public class GUI implements ActionListener {
         panel.add(keyboard_Input);
         panel.add(enter_button);
 
+        panel.add(label_PrintTicket);
         panel.add(print_Ticket);
         panel.add(show_Ticket);
         
