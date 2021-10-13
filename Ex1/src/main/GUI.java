@@ -92,7 +92,7 @@ public class GUI implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Cash Register");
         //frame.pack();
-        frame.setSize(800,800);
+        frame.setSize(400,800);
         //frame.setBounds(10,10,10,10);
         frame.setVisible(true);
     }
