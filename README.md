@@ -8,4 +8,8 @@ Mohammed Adnan Hashmi 100753115<br/>
 
 # Ex. 4: Comment on the advantages and disadvantages of the 3 approaches.
 
-put answer here
+Ex. 1 Approach:
+
+Ex. 2 Approach:
+
+Ex. 3 Approach:
