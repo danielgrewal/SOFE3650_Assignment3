@@ -89,9 +89,7 @@ public class GUI implements ActionListener {
 
         panel.add(label_PrintTicket);
         panel.add(print_Ticket);
-        //panel.add(show_Ticket);
         panel.add(scrollPane);
-        //panel.add(new JScrollPane(panel.add(show_Ticket), BorderLayout.PAGE_START);
         
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
