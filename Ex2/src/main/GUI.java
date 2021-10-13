@@ -29,7 +29,7 @@ public class GUI implements ActionListener {
 
     public GUI() {
 
-        this.cashRegister = new CashRegister();
+        this.cashRegister = new CashRegister(new Display(), new TicketPrinter());
         this.scanner = new Scanner(this.cashRegister);
         this.keyboard = new Keyboard(this.cashRegister);
 
@@ -86,7 +86,7 @@ public class GUI implements ActionListener {
         
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Ex1 Cash Register");
+        frame.setTitle("EX2 Cash Register");
         frame.pack();
         frame.setSize(300,800);
         //frame.setBounds(10,10,10,10);
