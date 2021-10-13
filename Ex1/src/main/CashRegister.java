@@ -24,11 +24,12 @@ public class CashRegister {
         String productString = getCurrentProductInfo().name + " $" + getCurrentProductInfo().price;
         display.displayText(productString);
         this.scannedProducts.add(productString);
-
-        String ticketString = "<html>";
-        ticketString += String.join("<br/>", scannedProducts);
-        ticketString += "</html>";
+        String ticketString = String.join("\n", scannedProducts);
         this.ticketPrinter.displayText(ticketString);
+        // String ticketString = "<html>";
+        // ticketString += String.join("<br/>", scannedProducts);
+        // ticketString += "</html>";
+        // this.ticketPrinter.displayText(ticketString);
     }
 
     public Product getCurrentProductInfo() {
